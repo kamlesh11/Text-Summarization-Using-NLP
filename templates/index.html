@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: black;
+        }
+ 
+        .carousel-inner img {
+            height: 70vh;
+        }
+ 
+        form {
+            display: flex;
+            /*height: 85vh;*/
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            width: 60%;
+            text-align: center;
+            margin: auto;
+            align-items: center;
+        }
+ 
+        .details h2 {
+            position: relative;
+            top: 100px;
+            margin: auto;
+            color: rgb(18, 231, 231);
+            font-size: 3rem;
+        }
+ 
+        label:hover {
+            transform: scale(1.03);
+        }
+ 
+        .details h2 {
+            /* margin-bottom: 300px; */
+            position: relative;
+            top: 100px;
+            margin: auto;
+            color: #ffbd39;
+            font-size: 3rem;
+ 
+        }
+ 
+        .gallery-h1 h1 {
+            background-color:#ffbd39;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 5px solid #ffbd39;
+        }
+ 
+        .details h1 {
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #ffbd39;
+        }
+ 
+        .upload {
+            background-color: antiquewhite;
+            align-self: center;
+            margin-top: 40px;
+            padding: 15px 35px;
+            background-color: white;
+            border-radius: 15px;
+            color: black;
+            font-size: 1.5rem;
+            border: 4px solid #ffbd39;
+            align-items: center;
+            text-emphasis-color: white;
+        }
+ 
+        ::-webkit-file-upload-button {
+            color: white;
+            padding: 20px;
+            border: 2px solid #ffbd39;
+            background-color:#ffbd39;
+            border-radius: 15px;
+        }
+ 
+        ::-webkit-file-upload-button:hover {
+            border-radius: 20px;
+            border: 2px solid #ffbd39;
+        }
+ 
+        input[type="submit"] {
+            position: absolute;
+            margin-top: 150px;
+            padding: 15px 35px;
+            background-color: white;
+            border-radius: 15px;
+            color: black;
+            font-size: 1.5rem;
+            border: 4px solid #ffbd39;
+        }
+ 
+        .title{
+            align-items: center;
+            text-align: center;
+            color: wheat;
+            font-size: xx-large;
+        }
+        .editbox{
+            background-color: antiquewhite;
+            color: black;
+        }
+        .container{
+            display: grid;
+            gap: 5px;
+            float: left;
+            grid-row-gap: 50px;
+            grid-template-columns: auto auto auto;
+
+        }
+    </style>
+ 
+ 
+</head>
+ 
+<body>
+ 
+    <h1 class="title">Text Summarization Using NLP</h1>
+    <!--   <div>
+             <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+                
+            <input class="upload" id="text" placeholder="Enter Your Article's URL." type="url" name="url" onchange="readURL(this);" style="margin-bottom: -300px;">
+            <br><br>
+            <input type="submit" value="Summarize" style="margin-bottom: -350px;">
+
+                <img id="blah" src="https://via.placeholder.com/300/000000/000000?Text=WebsiteBuilders.com%20C/O%20https://placeholder.com/" alt="your image" height="300px" width="300px"/>
+
+            </form>
+        </div>
+    -->
+    <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+    <div class="container">
+        <input id="text" class="upload" placeholder="Enter your article's url" type='url' name='url' onchange="readURL(this);">
+        
+        <select class='upload' name= options method="GET" action="/" style="background-color: white; text-decoration-color: white;color:gold;">
+            {% for option in options %}
+            <option value= "{{option}}" SELECTED>{{option}}</option>"
+            {% endfor %}
+        </select>
+    </div>
+    <input type="submit" value="Summarize" style="margin-top: 250px;">
+    
+</form> 
+</body>
+ 
+</html>

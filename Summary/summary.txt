@@ -1,0 +1,39 @@
+Subtitle quote is a fact that if you have more data about your problem you can extract more information about problem and can solve it much more accurately. Web scraping is a technique to collect that unstructured data and store it in structured form. Performing web scraping with multiple libraries
+
+Web scraping using Selenium and Beautiful Soup
+
+let me introduce each libraries
+
+Selenium: Selenium is a web testing library. It creates parse trees that is helpful to extract the data easily. Beautiful Soup is a Python package for parsing HTML and XML documents. Now to make this data into structured form we are storing it into pandas dataframe and furthur save it as csv file. DataFrame({'Product Name':products,'Price':prices})
+
+df.to_csv('products.csv', index=False, encoding='utf-8')
+
+Data
+
+Web scraping using requests_html
+
+We can scrape data from website by using single library only i.e. we will scrape the data using request_html
+
+Suppose we want to get the repository name, language used and date from github repositories page. name = [] # for storing name of repository
+
+lang = [] # language used in code
+
+date = [] # date updated
+
+for item in list:
+
+tmp = item.text.split('
+
+')
+
+name.append(tmp[0])
+
+lang.append(tmp[1])
+
+date.append(tmp[2])
+
+Now create the data frame to structure the data and further save as csv file. Now we have all the content so let’s start scraping the required data. response.css('._3LWZlK::text').extract()
+
+Similarly we can extract other data as well. Iphone spider
+
+Here each time we crawl the project spider will be run and the data will be scraped from website or websites. Now we need to extract name and rating of the iphones from flipkart page.

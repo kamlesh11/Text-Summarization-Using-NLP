@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+ 
+ 
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: black;
+        }
+ 
+        .border img {
+            border-radius: 15px;
+            border: 2px solid #ffbd39;
+        }
+
+        .h{
+            text-align: center;
+            color: antiquewhite;
+
+        }
+
+        .d{
+            background-color: antiquewhite;
+            align-self: center;
+            margin-top: 40px;
+            padding: 15px 35px;
+            background-color: white;
+            border-radius: 15px;
+            color: black;
+            font-size: 1.5rem;
+            border: 4px solid #ffbd39;
+            align-content: center;
+        }
+    </style>
+    <script> var summary = "{{ pred_output }}"</script>
+</head>
+ 
+<body>
+    <!--<div class="container-fluid">
+        <br>
+        <div class="row mb-5">
+ 
+            <div class="col-sm" style="margin-bottom: 23px;">
+                
+
+                <img style="height: 300px ; width: 300px;margin-left:100px;  border :5px solid #ffbd39;" 
+				src="{{user_image}}" alt="User Image" class="img-thumbnail" >
+
+            </div>
+ <br><br><br>
+            
+            <div class="col-sm">
+ 
+                <div>
+                    <h3 style="padding: 15px; background-color: #ffbd39; color: white; "
+                           class="text-center mb-5 content-h3 ">
+                        {{pred_output}} </h3>
+                </div>
+            </div>
+        </div>
+    
+    </div>-->
+    <h1 class="h">Summarized Text</h1>
+    <br>
+    <br>
+
+    <div>
+        <h3 id="summarized_text" style="padding: 15px; background-color:black; color: white; "
+               class="text-center mb-5 content-h3 ">
+            {{pred_output}} </h3>
+        <br>
+        <br>    
+        <!--<form method="get"  class="d">-->
+            <center><button  id="btn" type="submit" value="Download" style="align-items: center; align-self: center; background-color: antiquewhite; forced-color-adjust: inherit;">Download!</button></center>
+            
+        <!--</form>-->
+        <!--<a href="summary.txt" target="_blank" style="color: honeydew;">Download</a>-->
+    </div>
+    <script>
+        
+        function download(filename,text) {
+            var element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+            element.setAttribute('download', "Summary");
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+
+            document.body.removeChild(element);
+
+        }
+        // Start file download.
+        document.getElementById("btn")
+            .addEventListener("click", function() {
+                // Generate download of hello.txt 
+                // file with some content
+                //var text = document.getElementById("tmp").value;
+                //var filename = "summary";
+                //const txt = document.getElementById('new').value;
+                //alert(summary);
+                download('summary.txt',document.getElementById('summarized_text').innerText);
+            }, false);
+    </script>
+</body>
+</html>
